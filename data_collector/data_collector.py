@@ -50,9 +50,9 @@ if __name__ == '__main__':
             cropped_frame = frame[rect_point1[1]: rect_point2[1], rect_point1[0]: rect_point2[0]]
 
             resized_image = cv2.resize(cropped_frame, config.EXPORT_SIZE)
-            new_filename = f'dataset\\{chr(key_press)}\\{chr(key_press)}{time.time()}.jpg'
-            if not os.path.exists(f'dataset\\{chr(key_press)}'):
-                os.makedirs(f'dataset\\{chr(key_press)}')
+            new_filename = os.path.join(os.getcwd(), 'dataset', f'{chr(key_press)}', f'{chr(key_press)}{time.time()}.jpg')
+            if not os.path.exists(os.path.join(os.getcwd(), 'dataset', f'{chr(key_press)}')):
+                os.makedirs(os.path.join(os.getcwd(), 'dataset', f'{chr(key_press)}'))
             cv2.imwrite(new_filename, resized_image)
             print(f'saved {new_filename}')
         elif ord('1') == key_press:
