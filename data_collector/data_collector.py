@@ -1,5 +1,4 @@
 import cv2, time, os
-import numpy as np
 from lib import frame_rate_camera, config
 
 def centered_rect_points(frame, rect_width, rect_height):
@@ -38,7 +37,7 @@ if __name__ == '__main__':
 
         cv2.imshow("Camera output", frame) # show the image in a window
 
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         key_press = cv2.waitKey(1)
         if key_press == ord('`'): # if the user presses tilde
