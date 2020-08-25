@@ -4,5 +4,6 @@ Python project using Keras and OpenCV to create a convolutional network that can
 ## Data Collection
 Training and validation data is collected by taking snapshots of the square when a key is pressed
 
+### Demo
 ![Demonstration of the Program](demos/demos.gif)
 
